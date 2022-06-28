@@ -1,9 +1,19 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+//import App from './App';
+import App from './components/App';
 import reportWebVitals from './reportWebVitals';
 
+import StorePicker from './components/StorePicker';
+
+import './css/style.css';
+
+ReactDOM.render(<StorePicker />, document.querySelector('#root'));
+//const root = ReactDOM.createRoot(document.querySelector('#root'));
+//root.render(<p>HEYYYYYYYYYY</p>);
+
+/*
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -15,3 +25,4 @@ root.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+*/
