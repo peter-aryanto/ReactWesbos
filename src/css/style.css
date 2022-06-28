@@ -358,12 +358,12 @@ header.top h3:after {
   -webkit-transform: translateX(-50%) rotateY(10deg) translateX(50%) scale(1.08) translateX(24px);
           transform: translateX(-50%) rotateY(10deg) translateX(50%) scale(1.08) translateX(24px);
 }
-input#fold:not(:checked) ~ #main .catch-of-the-day > * {
+input#fold:not(:checked) ~ #root .catch-of-the-day > * {
   -webkit-transform: none;
           transform: none;
 }
 label[for="fold"] {
-  position: absolute;
+  /*position: absolute;*/
   top: 1rem;
   left: 1rem;
   text-transform: uppercase;
@@ -375,7 +375,7 @@ label[for="fold"] {
   padding: 0.5rem 1rem;
 }
 input#fold {
-  display: none;
+  /*display: none;*/
 }
 input#fold:checked + label {
   background: #fff;
