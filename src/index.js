@@ -9,7 +9,12 @@ import StorePicker from './components/StorePicker';
 
 import './css/style.css';
 
-ReactDOM.render(<StorePicker />, document.querySelector('#root'));
+ReactDOM.render(
+  <>
+    <StorePicker />
+    <App />
+  </>,
+  document.querySelector('#root'));
 //const root = ReactDOM.createRoot(document.querySelector('#root'));
 //root.render(<p>HEYYYYYYYYYY</p>);
 
