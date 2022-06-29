@@ -340,7 +340,7 @@ header.top h3:after {
   overflow: scroll;
 }
 .catch-of-the-day > *:first-child {
-  flex-shrink: 1;
+  flex-shrink: 0.1;
   flex-basis: 50%;
   -webkit-transform: translateX(50%) rotateY(6deg) translateX(-50%);
           transform: translateX(50%) rotateY(6deg) translateX(-50%);
