@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Header({tagline}) {
+export default function Header(props) {
 ///class Header extends React.Component {
   ///render() {
   return (
@@ -8,7 +8,7 @@ export default function Header({tagline}) {
     <header className='top'>
       <h1>Catch o d Day</h1>
       <h3 className='tagline'>
-        <span>{tagline}</span>
+        <span>{props.tagline}</span>
         {/*<span>{this.props.tagline}</span>*/}
         </h3>
     </header>

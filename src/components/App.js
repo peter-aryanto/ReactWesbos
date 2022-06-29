@@ -14,7 +14,7 @@ export default function App() {
     <Myp>Hello Again!</Myp>
     <div className='catch-of-the-day'>
       <div className='menu'>
-        <Header tagline='It is super fresh!' />
+        <Header tagline='It is zuper fresh!' />
       </div>
       <Order />
       <Inventory />
