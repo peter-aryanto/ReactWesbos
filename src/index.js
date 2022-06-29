@@ -1,18 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-//import App from './App';
-import App from './components/App';
+//import App from './components/App';
 import reportWebVitals from './reportWebVitals';
 
-import StorePicker from './components/StorePicker';
+//import StorePicker from './components/StorePicker';
+import Router from './components/Router';
 
 import './css/style.css';
 
 ReactDOM.render(
   <>
-    <StorePicker />
-    <App />
+    {/*<StorePicker />
+    <App />*/}
+    <Router />
   </>,
   document.querySelector('#root'));
 //const root = ReactDOM.createRoot(document.querySelector('#root'));

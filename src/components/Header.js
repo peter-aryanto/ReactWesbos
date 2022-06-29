@@ -10,7 +10,7 @@ export default function Header(props) {
       <h3 className='tagline'>
         <span>{props.tagline}</span>
         {/*<span>{this.props.tagline}</span>*/}
-        </h3>
+      </h3>
     </header>
     </>
   );
