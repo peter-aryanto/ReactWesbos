@@ -1,4 +1,4 @@
-import React, { useCallback, useRef } from 'react';
+import React, { /*useCallback,*/ useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 function StorePicker() {
