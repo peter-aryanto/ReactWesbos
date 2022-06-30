@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Header from './Header';
 import Order from './Order';
 import Inventory from './Inventory';
+import sampleFishes from '../sample-fishes';
 
 const Myp = styled.p`
   color: red;
@@ -24,6 +25,10 @@ export default function App() {
     fishesCopy[`fish${Date.now()}`] = fish;
     setFishes(fishesCopy);
   }
+  const loadSampleFishes = () => {
+    //alert('Loading sample fishes ...');
+    setFishes(sampleFishes);
+  }
   return (
     <>
     <Myp>Hello Again!</Myp>
@@ -32,7 +37,7 @@ export default function App() {
         <Header tagline='It is zuper fresh!' />
       </div>
       <Order />
-      <Inventory addFish={addFish} />
+      <Inventory addFish={addFish} loadSampleFishes={loadSampleFishes} />
     </div>
     </>
   );
