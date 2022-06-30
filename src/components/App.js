@@ -4,6 +4,7 @@ import Header from './Header';
 import Order from './Order';
 import Inventory from './Inventory';
 import sampleFishes from '../sample-fishes';
+import Fish from './Fish';
 
 const Myp = styled.p`
   color: red;
@@ -35,6 +36,14 @@ export default function App() {
     <div className='catch-of-the-day'>
       <div className='menu'>
         <Header tagline='It is zuper fresh!' />
+        <ul>
+          {
+            Object.keys(fishes)
+              //.map((key) => <p>{fishes[key].name}</p>)
+              .map((key) =>
+                <Fish key={key} details={fishes[key]} />)
+          }
+        </ul>
       </div>
       <Order />
       <Inventory addFish={addFish} loadSampleFishes={loadSampleFishes} />
