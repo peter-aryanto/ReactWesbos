@@ -18,6 +18,7 @@ export default function App() {
   }
   */
   const [fishes, setFishes] = useState({});
+  const [order, setOrder] = useState({});
   const addFish = (fish) => {
     //alert('Adding a Fish...');
     console.log('Adding a fish ...');
@@ -30,6 +31,11 @@ export default function App() {
     //alert('Loading sample fishes ...');
     setFishes(sampleFishes);
   }
+  const addToOrder = (key) => {
+    const orderCopy = {...order};
+    orderCopy[key] = order[key] + 1 || 1;
+    setOrder(orderCopy);
+  }
   return (
     <>
     <Myp>Hello Again!</Myp>
@@ -41,7 +47,10 @@ export default function App() {
             Object.keys(fishes)
               //.map((key) => <p>{fishes[key].name}</p>)
               .map((key) =>
-                <Fish key={key} details={fishes[key]} />)
+                <Fish key={key}
+                  theKey = {key}
+                  details={fishes[key]}
+                  addToOrder={addToOrder}/>)
           }
         </ul>
       </div>
