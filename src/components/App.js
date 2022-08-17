@@ -54,7 +54,7 @@ export default function App() {
           }
         </ul>
       </div>
-      <Order />
+      <Order fishes={fishes} order={order} />
       <Inventory addFish={addFish} loadSampleFishes={loadSampleFishes} />
     </div>
     </>
