@@ -15,7 +15,8 @@ export default function Inventory(props) {
         <AddFishForm key={key}
           theKey = {key}
           details={props.fishes[key]}
-          updateFish={props.updateFish} />)}
+          updateFish={props.updateFish}
+          removeFish={props.removeFish} />)}
       <AddFishForm addFish={props.addFish} />
       <button onClick={props.loadSampleFishes}>Load Sample Fishes</button>
     </div>

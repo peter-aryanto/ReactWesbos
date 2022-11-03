@@ -28,10 +28,12 @@ export default function App() {
     setFishes(fishesCopy);
   }
   const updateFish = (key, fish) => {
-    //alert('Adding a Fish...');
-    console.log('Adding a fish ...');
-    console.log(fish);
     const fishesCopy = {...fishes, [key]: fish};
+    setFishes(fishesCopy);
+  }
+  const removeFish = (key) => {
+    const fishesCopy = {...fishes};
+    delete fishesCopy[key];
     setFishes(fishesCopy);
   }
   const loadSampleFishes = () => {
@@ -66,7 +68,8 @@ export default function App() {
         addFish={addFish}
         loadSampleFishes={loadSampleFishes}
         fishes={fishes}
-        updateFish={updateFish}/>
+        updateFish={updateFish}
+        removeFish={removeFish} />
     </div>
     </>
   );

@@ -8,6 +8,7 @@ export default function AddFishForm(props) {
   const imageRef = useRef();
   let addFish = () => false;
   let handleChange = () => false;
+  let removeFish = () => false;
   if (!props.details) {
     addFish = e => {
       e.preventDefault();
@@ -31,6 +32,9 @@ export default function AddFishForm(props) {
         [e.currentTarget.name]: e.currentTarget.value
       };
       props.updateFish(props.theKey, updatedFish);
+    }
+    removeFish = () => {
+      props.removeFish(props.theKey);
     }
   }
   return (
@@ -80,6 +84,9 @@ export default function AddFishForm(props) {
         value={props.details?.image}
         onChange={handleChange} />
       {!props.details && <button type='submit'>+ Add Fish</button>}
+      {props.details && <button type='button' onClick={removeFish}>
+        &times; Remove Fish
+      </button>}
     </form>
   );
 }
