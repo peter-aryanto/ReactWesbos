@@ -27,6 +27,13 @@ export default function App() {
     fishesCopy[`fish${Date.now()}`] = fish;
     setFishes(fishesCopy);
   }
+  const updateFish = (key, fish) => {
+    //alert('Adding a Fish...');
+    console.log('Adding a fish ...');
+    console.log(fish);
+    const fishesCopy = {...fishes, [key]: fish};
+    setFishes(fishesCopy);
+  }
   const loadSampleFishes = () => {
     //alert('Loading sample fishes ...');
     setFishes(sampleFishes);
@@ -55,7 +62,11 @@ export default function App() {
         </ul>
       </div>
       <Order fishes={fishes} order={order} />
-      <Inventory addFish={addFish} loadSampleFishes={loadSampleFishes} />
+      <Inventory
+        addFish={addFish}
+        loadSampleFishes={loadSampleFishes}
+        fishes={fishes}
+        updateFish={updateFish}/>
     </div>
     </>
   );
