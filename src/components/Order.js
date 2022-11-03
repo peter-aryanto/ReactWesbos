@@ -1,5 +1,6 @@
 import React from 'react';
 import { formatCurrency } from '../helpers';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 export default function Order(poops) {
   const orderKeys = Object.keys(poops.order);
@@ -12,15 +13,21 @@ export default function Order(poops) {
     if (isAvailable) {
       const count = poops.order[key];
       return (
-        <li key={key}>
-          {count} {fish.name}
-          {formatCurrency(count * fish.price)}
-        </li>
+        <CSSTransition classNames='order' key={key} timeout={{enter:250,exit:250}}>
+          <li key={key}>
+            {count} {fish.name}
+            {formatCurrency(count * fish.price)}
+          </li>
+        </CSSTransition>
       );
     }
     else {
       return (
-        <li key={key}>Sorry {fish.name} is no longer available.</li>
+        <CSSTransition key={key} timeout={{enter:250,exit:250}}>
+          <li key={key}>
+            Sorry {fish.name} is no longer available.
+          </li>
+        </CSSTransition>
       );
     }
   }
@@ -39,9 +46,9 @@ export default function Order(poops) {
   return (
     <div className='order-wrap'>
       <h2>Order!!!</h2>
-      <ul>
+      <TransitionGroup component='ul'>
         {orderKeys.map((key) => renderOrderItem(key))}
-      </ul>
+      </TransitionGroup>
       <div className='total'>
         Total: <strong>{formatCurrency(totalPrice)}</strong>
       </div>
